@@ -10,10 +10,10 @@
 
 "@graph":
   # ---- DATASET ----
-  - "@id":                 niaid:Dataset
+  - "@id":                 niaid:NiaidDataset
     "@type":               rdfs:Class
     rdfs:comment:          "A schema describing a minimal Dataset for the National Institute of Allergy and Infectious Disease (NIAID). A dataset is a collection of data of a particular experimental type. Additional schema.org and/or custom properties could be added."
-    rdfs:label:            Dataset
+    rdfs:label:            NiaidDataset
     rdfs:subClassOf:
       "@id":               schema:Dataset
     schema:isPartOf:
@@ -25,7 +25,7 @@
     rdfs:comment:          Descriptive name of the dataset
     rdfs:label:            name
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
       - "@id":             schema:Text
     schema:sameAs:
@@ -40,7 +40,7 @@
     rdfs:comment:          Longer description of what is contained in the dataset
     rdfs:label:            description
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
       - "@id":             schema:Text
     schema:sameAs:
@@ -55,7 +55,7 @@
     rdfs:comment:          A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s).
     rdfs:label:            measurementTechnique
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
       - "@id":             schema:Text
     schema:sameAs:
@@ -69,7 +69,7 @@
     rdfs:comment:          "A unique identifier for the Dataset."
     rdfs:label:            identifier
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
       "@id":               schema:Text
     schema:sameAs:
@@ -84,9 +84,9 @@
     rdfs:comment:          "Name of the author or organization that created the dataset.  Note: schema.org/creator and schema.org/organization have additional fields that can provide more information about the author/organization, if desired."
     rdfs:label:            creator
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
-      - "@id":             niaid:Organization
+      - "@id":             niaid:NiaidOrganization
     schema:sameAs:
       "@id":               schema:creator
     owl:cardinality:       many
@@ -99,9 +99,9 @@
     rdfs:comment:          DataDownload objects, which contain the URL link to download the raw, analyzed, and summary data associated with the dataset as well as associated metadata for the file.
     rdfs:label:            distribution
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
-      - "@id":             niaid:DataDownload
+      - "@id":             niaid:NiaidDataDownload
     owl:cardinality:       many
     marginality:           required
 
@@ -112,9 +112,9 @@
     rdfs:comment:          Journal article or other publication associated with the dataset (stored as an object, not a string)
     rdfs:label:            citation
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
-      - "@id":             niaid:ScholarlyArticle
+      - "@id":             niaid:NiaidScholarlyArticle
     schema:sameAs:
       "@id":               schema:citation
     owl:cardinality:       many
@@ -127,9 +127,9 @@
     rdfs:comment:          Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution
     rdfs:label:            funding
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
-      - "@id":             niaid:MonetaryGrant
+      - "@id":             niaid:NiaidMonetaryGrant
     schema:sameAs:
       "@id":               schema:funding
     owl:cardinality:       many
@@ -142,7 +142,7 @@
     rdfs:comment:          A license document that applies to this content, typically indicated by URL.
     rdfs:label:            license
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
       - "@id":             schema:URL
     schema:sameAs:
@@ -156,7 +156,7 @@
     rdfs:comment:          Species(es) from which dataset has been collected
     rdfs:label:            species
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
       - "@id":             schema:Text
     owl:cardinality:       many
@@ -167,14 +167,14 @@
     rdfs:comment:          Pathogen(s) which are the focus of the dataset
     rdfs:label:            pathogen
     schema:domainIncludes:
-      - "@id":             niaid:Dataset
+      - "@id":             niaid:NiaidDataset
     schema:rangeIncludes:
       - "@id":             schema:Text
     owl:cardinality:       many
     marginality:           recommended
 
 # ---- DATATDOWNLOAD ----
-  - "@id":                 niaid:DataDownload
+  - "@id":                 niaid:NiaidDataDownload
     "@type":               rdfs:Class
     rdfs:comment:          A dataset in downloadable form.
     rdfs:label:            DataDownload
@@ -188,7 +188,7 @@
     rdfs:comment:          Link to the location where the dataset can be found, ideally a permanent URL
     rdfs:label:            contentUrl
     schema:domainIncludes:
-      - "@id":             niaid:DataDownload
+      - "@id":             niaid:NiaidDataDownload
     schema:rangeIncludes:
       "@id":               schema:URL
     schema:sameAs:
@@ -201,7 +201,7 @@
     rdfs:comment:          Date which the particular DataDownload (file) has been changed
     rdfs:label:            dateModified
     schema:domainIncludes:
-      - "@id":             niaid:DataDownload
+      - "@id":             niaid:NiaidDataDownload
     schema:rangeIncludes:
       "@id":               schema:Date
     schema:sameAs:
@@ -210,7 +210,7 @@
     marginality:           required
 
 # ---- SCHOLARLYARTICLE ----
-  - "@id":                 niaid:ScholarlyArticle
+  - "@id":                 niaid:NiaidScholarlyArticle
     "@type":               rdfs:Class
     rdfs:comment:          A scholarly article in which the dataset is cited.
     rdfs:label:            ScholarlyArticle
@@ -224,7 +224,7 @@
     rdfs:comment:          Unique identifier for the citation.  Should be either a DOI (preferred) or PMID (e.g., 10.1126/sciimmunol.aaw6329, PMID:31471352)
     rdfs:label:            identifier
     schema:domainIncludes:
-      - "@id":             niaid:ScholarlyArticle
+      - "@id":             niaid:NiaidScholarlyArticle
     schema:rangeIncludes:
       "@id":               schema:URL
     schema:sameAs:
@@ -234,10 +234,10 @@
 
 
     # ---- MONETARYGRANT ----
-  - "@id":                 niaid:MonetaryGrant
+  - "@id":                 niaid:NiaidMonetaryGrant
     "@type":               rdfs:Class
     rdfs:comment:          Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution
-    rdfs:label:            MonetaryGrant
+    rdfs:label:            NiaidMonetaryGrant
     rdfs:subClassOf:
       "@id":               schema:MonetaryGrant
     schema:isPartOf:
@@ -248,9 +248,9 @@
     rdfs:comment:          An organization that supports (sponsors) something this dataset some kind of financial contribution.
     rdfs:label:            funder
     schema:domainIncludes:
-      - "@id":             niaid:MonetaryGrant
+      - "@id":             niaid:NiaidMonetaryGrant
     schema:rangeIncludes:
-      "@id":               niaid:Organization
+      "@id":               niaid:NiaidOrganization
     schema:sameAs:
       "@id":               schema:funder
     owl:cardinality:       one
@@ -261,7 +261,7 @@
     rdfs:comment:          Unique identifier(s) for the grant(s) used to fund the Dataset
     rdfs:label:            identifier
     schema:domainIncludes:
-      - "@id":             niaid:MonetaryGrant
+      - "@id":             niaid:NiaidMonetaryGrant
     schema:rangeIncludes:
       "@id":               schema:Text
     schema:sameAs:
@@ -270,7 +270,7 @@
     marginality:           required
 
 # ---- ORGANIZATION (for creator, funder) ----
-  - "@id":                 niaid:Organization
+  - "@id":                 niaid:NiaidOrganization
     "@type":               rdfs:Class
     rdfs:comment:          An organization associated with a creator or funder of a dataset
     rdfs:label:            Organization
@@ -284,7 +284,7 @@
     rdfs:comment:          Name of the organization
     rdfs:label:            name
     schema:domainIncludes:
-      - "@id":             niaid:Organization
+      - "@id":             niaid:NiaidOrganization
     schema:rangeIncludes:
       "@id":               schema:Text
     schema:sameAs:
