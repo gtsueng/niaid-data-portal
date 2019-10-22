@@ -282,7 +282,7 @@
   - "@id":                 niaid:name
     "@type":               rdf:Property
     rdfs:comment:          Name of the organization
-    rdfs:label:            funder
+    rdfs:label:            name
     schema:domainIncludes:
       - "@id":             niaid:Organization
     schema:rangeIncludes:
