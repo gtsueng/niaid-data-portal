@@ -9,10 +9,10 @@
   "@id": "https://discovery.biothings.io/view/niaid/",
   "@graph": [
     {
-      "@id": "niaid:Dataset",
+      "@id": "niaid:NiaidDataset",
       "@type": "rdfs:Class",
       "rdfs:comment": "A schema describing a minimal Dataset for the National Institute of Allergy and Infectious Disease (NIAID). A dataset is a collection of data of a particular experimental type. Additional schema.org and/or custom properties could be added.",
-      "rdfs:label": "Dataset",
+      "rdfs:label": "NiaidDataset",
       "rdfs:subClassOf": {
         "@id": "schema:Dataset"
       },
@@ -27,7 +27,7 @@
       "rdfs:label": "name",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
@@ -48,7 +48,7 @@
       "rdfs:label": "description",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
@@ -69,7 +69,7 @@
       "rdfs:label": "measurementTechnique",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
@@ -90,7 +90,7 @@
       "rdfs:label": "identifier",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": {
@@ -109,12 +109,12 @@
       "rdfs:label": "creator",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "niaid:Organization"
+          "@id": "niaid:NiaidOrganization"
         }
       ],
       "schema:sameAs": {
@@ -130,12 +130,12 @@
       "rdfs:label": "distribution",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "niaid:DataDownload"
+          "@id": "niaid:NiaidDataDownload"
         }
       ],
       "owl:cardinality": "many",
@@ -148,12 +148,12 @@
       "rdfs:label": "citation",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "niaid:ScholarlyArticle"
+          "@id": "niaid:NiaidScholarlyArticle"
         }
       ],
       "schema:sameAs": {
@@ -169,12 +169,12 @@
       "rdfs:label": "funding",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "niaid:MonetaryGrant"
+          "@id": "niaid:NiaidMonetaryGrant"
         }
       ],
       "schema:sameAs": {
@@ -190,7 +190,7 @@
       "rdfs:label": "license",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
@@ -211,7 +211,7 @@
       "rdfs:label": "species",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
@@ -229,7 +229,7 @@
       "rdfs:label": "pathogen",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Dataset"
+          "@id": "niaid:NiaidDataset"
         }
       ],
       "schema:rangeIncludes": [
@@ -241,7 +241,7 @@
       "marginality": "recommended"
     },
     {
-      "@id": "niaid:DataDownload",
+      "@id": "niaid:NiaidDataDownload",
       "@type": "rdfs:Class",
       "rdfs:comment": "A dataset in downloadable form.",
       "rdfs:label": "DataDownload",
@@ -259,7 +259,7 @@
       "rdfs:label": "contentUrl",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:DataDownload"
+          "@id": "niaid:NiaidDataDownload"
         }
       ],
       "schema:rangeIncludes": {
@@ -278,7 +278,7 @@
       "rdfs:label": "dateModified",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:DataDownload"
+          "@id": "niaid:NiaidDataDownload"
         }
       ],
       "schema:rangeIncludes": {
@@ -291,7 +291,7 @@
       "marginality": "required"
     },
     {
-      "@id": "niaid:ScholarlyArticle",
+      "@id": "niaid:NiaidScholarlyArticle",
       "@type": "rdfs:Class",
       "rdfs:comment": "A scholarly article in which the dataset is cited.",
       "rdfs:label": "ScholarlyArticle",
@@ -309,7 +309,7 @@
       "rdfs:label": "identifier",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:ScholarlyArticle"
+          "@id": "niaid:NiaidScholarlyArticle"
         }
       ],
       "schema:rangeIncludes": {
@@ -322,10 +322,10 @@
       "marginality": "required"
     },
     {
-      "@id": "niaid:MonetaryGrant",
+      "@id": "niaid:NiaidMonetaryGrant",
       "@type": "rdfs:Class",
       "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
-      "rdfs:label": "MonetaryGrant",
+      "rdfs:label": "NiaidMonetaryGrant",
       "rdfs:subClassOf": {
         "@id": "schema:MonetaryGrant"
       },
@@ -340,11 +340,11 @@
       "rdfs:label": "funder",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:MonetaryGrant"
+          "@id": "niaid:NiaidMonetaryGrant"
         }
       ],
       "schema:rangeIncludes": {
-        "@id": "niaid:Organization"
+        "@id": "niaid:NiaidOrganization"
       },
       "schema:sameAs": {
         "@id": "schema:funder"
@@ -359,7 +359,7 @@
       "rdfs:label": "identifier",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:MonetaryGrant"
+          "@id": "niaid:NiaidMonetaryGrant"
         }
       ],
       "schema:rangeIncludes": {
@@ -372,7 +372,7 @@
       "marginality": "required"
     },
     {
-      "@id": "niaid:Organization",
+      "@id": "niaid:NiaidOrganization",
       "@type": "rdfs:Class",
       "rdfs:comment": "An organization associated with a creator or funder of a dataset",
       "rdfs:label": "Organization",
@@ -390,7 +390,7 @@
       "rdfs:label": "name",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:Organization"
+          "@id": "niaid:NiaidOrganization"
         }
       ],
       "schema:rangeIncludes": {
