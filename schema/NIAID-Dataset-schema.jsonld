@@ -2,10 +2,8 @@
   "@context": {
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfa": "http://www.w3.org/ns/rdfa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "schema": "http://schema.org/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "niaid": "https://discovery.biothings.io/view/niaid/"
   },
   "@id": "https://discovery.biothings.io/view/niaid/",
@@ -280,11 +278,11 @@
       "rdfs:label": "dateModified",
       "schema:domainIncludes": [
         {
-          "@id": "niaid:dateModified"
+          "@id": "niaid:DataDownload"
         }
       ],
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Date"
       },
       "schema:sameAs": {
         "@id": "schema:DataDownload"
@@ -358,7 +356,7 @@
       "@id": "niaid:identifier",
       "@type": "rdf:Property",
       "rdfs:comment": "Unique identifier(s) for the grant(s) used to fund the Dataset",
-      "rdfs:label": "funder",
+      "rdfs:label": "identifier",
       "schema:domainIncludes": [
         {
           "@id": "niaid:MonetaryGrant"
