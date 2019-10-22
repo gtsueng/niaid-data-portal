@@ -177,7 +177,7 @@
   - "@id":                 niaid:NiaidDataDownload
     "@type":               rdfs:Class
     rdfs:comment:          A dataset in downloadable form.
-    rdfs:label:            DataDownload
+    rdfs:label:            NiaidDataDownload
     rdfs:subClassOf:
       "@id":               schema:DataDownload
     schema:isPartOf:
@@ -213,7 +213,7 @@
   - "@id":                 niaid:NiaidScholarlyArticle
     "@type":               rdfs:Class
     rdfs:comment:          A scholarly article in which the dataset is cited.
-    rdfs:label:            ScholarlyArticle
+    rdfs:label:            NiaidScholarlyArticle
     rdfs:subClassOf:
       "@id":               schema:ScholarlyArticle
     schema:isPartOf:
@@ -273,7 +273,7 @@
   - "@id":                 niaid:NiaidOrganization
     "@type":               rdfs:Class
     rdfs:comment:          An organization associated with a creator or funder of a dataset
-    rdfs:label:            Organization
+    rdfs:label:            NiaidOrganization
     rdfs:subClassOf:
       "@id":               schema:Organization
     schema:isPartOf:
