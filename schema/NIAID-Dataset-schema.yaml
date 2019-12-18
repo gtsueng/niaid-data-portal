@@ -63,16 +63,16 @@
     owl:cardinality:       many
     marginality:           required
     vocabulary:
-      - ontology:          "EDAM bioinformatics"
+      - ontology:          "edam"
         children_of:       "http://edamontology.org/topic_3361"
         strict:            false
-      - ontology:          "Experimental Factor Ontology"
+      - ontology:          "efo"
         children_of:       "http://www.ebi.ac.uk/efo/efo.owl"
         strict:            false
-      - ontology:          "Ontology for MIRNA Target"
+      - ontology:          "omit"
         children_of:       "http://purl.obolibrary.org/obo/omit.owl"
         strict:            false
-      - ontology:          "NCI Thesaurus"
+      - ontology:          "ncit"
         children_of:       "http://purl.obolibrary.org/obo/ncit.owl"
         strict:            false
 
@@ -188,7 +188,7 @@
     owl:cardinality:       many
     marginality:           recommended
     vocabulary:
-      - ontology:          "NCBI organismal classification"
+      - ontology:          "ncbitaxon"
         children_of:       "http://purl.obolibrary.org/obo/ncbitaxon.owl"
         strict:            false
 
@@ -205,7 +205,7 @@
     owl:cardinality:       many
     marginality:           recommended
     vocabulary:
-      - ontology:          "NCBI organismal classification"
+      - ontology:          "ncbitaxon"
         children_of:       "http://purl.obolibrary.org/obo/ncbitaxon.owl"
         strict:            false
 
@@ -293,7 +293,7 @@
     owl:cardinality:       one
     marginality:           required
     vocabulary:
-      - ontology:          "NCI Thesaurus"
+      - ontology:          "ncit"
         children_of:       "http://purl.obolibrary.org/obo/NCIT_C19711"
         strict:            false
 
