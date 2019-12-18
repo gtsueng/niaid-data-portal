@@ -62,6 +62,32 @@
       "@id":               schema:measurementTechnique
     owl:cardinality:       many
     marginality:           required
+    vocabulary:
+      - ontology:          "EDAM bioinformatics"
+        children_of:       "http://edamontology.org/topic_3361"
+        strict:            false
+      - ontology:          "Experimental Factor Ontology"
+        children_of:       "http://www.ebi.ac.uk/efo/efo.owl"
+        strict:            false
+      - ontology:          "Ontology for MIRNA Target"
+        children_of:       "http://purl.obolibrary.org/obo/omit.owl"
+        strict:            false
+      - ontology:          "NCI Thesaurus"
+        children_of:       "http://purl.obolibrary.org/obo/ncit.owl"
+        strict:            false
+
+  - "@id":                 niaid:variableMeasured
+    "@type":               rdf:Property
+    rdfs:comment:          The variable measured in an experiment
+    rdfs:label:            variableMeasured
+    schema:domainIncludes:
+      - "@id":             niaid:NiaidDataset
+    schema:rangeIncludes:
+      - "@id":             schema:Text
+    schema:sameAs:
+      "@id":               schema:variableMeasured
+    owl:cardinality:       many
+    marginality:           recommended
 
 
   - "@id":                 niaid:identifier
@@ -161,6 +187,12 @@
       - "@id":             schema:Text
     owl:cardinality:       many
     marginality:           recommended
+    vocabulary:
+      - ontology:          "EDAM bioinformatics"
+        children_of:       "http://purl.obolibrary.org/obo/ncbitaxon.owl"
+        strict:            false
+
+
 
   - "@id":                 niaid:pathogen
     "@type":               rdf:Property
@@ -172,6 +204,11 @@
       - "@id":             schema:Text
     owl:cardinality:       many
     marginality:           recommended
+    vocabulary:
+      - ontology:          "EDAM bioinformatics"
+        children_of:       "http://purl.obolibrary.org/obo/ncbitaxon.owl"
+        strict:            false
+
 
 # ---- DATATDOWNLOAD ----
   - "@id":                 niaid:NiaidDataDownload
@@ -255,6 +292,10 @@
       "@id":               schema:funder
     owl:cardinality:       one
     marginality:           required
+    vocabulary:
+      - ontology:          "NCI Thesaurus"
+        children_of:       "http://purl.obolibrary.org/obo/NCIT_C19711"
+        strict:            false
 
   - "@id":                 niaid:identifier
     "@type":               rdf:Property
