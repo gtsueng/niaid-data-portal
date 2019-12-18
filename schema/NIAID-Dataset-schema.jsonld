@@ -266,7 +266,7 @@
       "marginality": "recommended",
       "vocabulary": [
         {
-          "ontology": "EDAM bioinformatics",
+          "ontology": "NCBI organismal classification",
           "children_of": "http://purl.obolibrary.org/obo/ncbitaxon.owl",
           "strict": false
         }
@@ -291,7 +291,7 @@
       "marginality": "recommended",
       "vocabulary": [
         {
-          "ontology": "EDAM bioinformatics",
+          "ontology": "NCBI organismal classification",
           "children_of": "http://purl.obolibrary.org/obo/ncbitaxon.owl",
           "strict": false
         }
