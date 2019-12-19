@@ -32,11 +32,12 @@
           },
           "measurementTechnique": {
             "description": "A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s).",
-            "enum": [
-              "whole-genome sequencing",
-              "whole-exome sequencing",
-              "mass spectrum"
-            ]
+            "type": "string",
+            "vocabulary": {
+              "ontology": ["edam", "ncit"],
+              "children_of": ["http://edamontology.org/topic_3361", "http://purl.obolibrary.org/obo/NCIT_C20368"],
+              "strict": false
+            }
           },
           "identifier": {
             "description": "Longer description of what is contained in the dataset",
