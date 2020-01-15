@@ -32,12 +32,16 @@
           },
           "measurementTechnique": {
             "description": "A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s).",
-            "type": "string",
-            "vocabulary": {
-              "ontology": ["edam", "ncit"],
-              "children_of": ["http://edamontology.org/topic_3361", "http://purl.obolibrary.org/obo/NCIT_C20368"],
-              "strict": false
-            }
+            "oneOf": [{
+                "$ref": "#/definitions/controlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/controlledVocabulary"
+                }
+              }
+            ]
           },
           "identifier": {
             "description": "Longer description of what is contained in the dataset",
@@ -45,19 +49,55 @@
           },
           "creator": {
             "description": "Name of the author or organization that created the dataset.  Note: schema.org/creator and schema.org/organization have additional fields that can provide more information about the author/organization, if desired.",
-            "$ref": "#/definitions/person"
+            "oneOf": [{
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ]
           },
           "distribution": {
             "description": "DataDownload objects, which contain the URL link to download the raw, analyzed, and summary data associated with the dataset as well as associated metadata for the file.",
-            "$ref": "#/definitions/dataDownload"
+            "oneOf": [{
+                "$ref": "#/definitions/dataDownload"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/dataDownload"
+                }
+              }
+            ]
           },
           "citation": {
             "description": "Journal article or other publication associated with the dataset (stored as an object, not a string)",
-            "$ref": "#/definitions/article"
+            "oneOf": [{
+                "$ref": "#/definitions/article"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/article"
+                }
+              }
+            ]
           },
           "funding": {
             "description": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
-            "$ref": "#/definitions/funder"
+            "oneOf": [{
+                "$ref": "#/definitions/funder"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/funder"
+                }
+              }
+            ]
           },
           "license": {
             "description": "A license document that applies to this content, typically indicated by URL.",
@@ -66,11 +106,29 @@
           },
           "species": {
             "description": "Species(es) from which dataset has been collected",
-            "type": "string"
+            "oneOf": [{
+                "$ref": "#/definitions/miscControlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/miscControlledVocabulary"
+                }
+              }
+            ]
           },
           "pathogen": {
             "description": "Pathogen(s) which are the focus of the dataset",
-            "type": "string"
+            "oneOf": [{
+                "$ref": "#/definitions/miscControlledVocabulary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/miscControlledVocabulary"
+                }
+              }
+            ]
           }
         },
         "required": [
@@ -98,6 +156,26 @@
             "required": [
               "name"
             ]
+          },
+          "controlledVocabulary": {
+            "description": "collection of vocabulary terms defined in ontologies",
+            "@type": "CreativeWork",
+            "type": "string",
+            "vocabulary": {
+              "ontology": ["edam", "ncit"],
+              "children_of": ["http://edamontology.org/topic_3361", "http://purl.obolibrary.org/obo/NCIT_C20368"]
+            },
+            "strict": false
+          },
+          "miscControlledVocabulary": {
+            "description": "collection of vocabulary terms defined in ontologies",
+            "@type": "CreativeWork",
+            "type": "string",
+            "vocabulary": [{
+              "ontology": "ncbitaxon",
+              "children_of": "http://purl.obolibrary.org/obo/ncbitaxon.owl"
+            }],
+            "strict": false
           },
           "funder": {
             "type": "object",
