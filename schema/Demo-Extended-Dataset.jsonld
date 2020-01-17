@@ -1,0 +1,108 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sulab": "http://discovery.biothings.io/"
+  },
+  "@graph": [
+    {
+      "@id": "sulab:SuDataset",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A demo Dataset schema, building off of NIAID's minimal Dataset schema, which is based off of schema.org's Dataset",
+      "rdfs:label": "SuDataset",
+      "rdfs:subClassOf": {
+        "@id": "niaid:NiaidDataset"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "analysisCode": {
+            "description": "link to any code used in the analysis / creation of this Dataset",
+            "type": "string"
+          },
+          "name": {
+            "description": "The name of the item.",
+            "type": "string"
+          },
+          "description": {
+            "description": "A description of the item.",
+            "type": "string"
+          },
+          "measurementTechnique": {
+            "description": "A technique or technology used in a <a class=\"localLink\" href=\"http://schema.org/Dataset\">Dataset</a> (or <a class=\"localLink\" href=\"http://schema.org/DataDownload\">DataDownload</a>, <a class=\"localLink\" href=\"http://schema.org/DataCatalog\">DataCatalog</a>),\ncorresponding to the method used for measuring the corresponding variable(s) (described using <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a>). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.<br/><br/>\n\nFor example, if <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> is: molecule concentration, <a class=\"localLink\" href=\"http://schema.org/measurementTechnique\">measurementTechnique</a> could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".<br/><br/>\n\nIf the <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> is \"depression rating\", the <a class=\"localLink\" href=\"http://schema.org/measurementTechnique\">measurementTechnique</a> could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".<br/><br/>\n\nIf there are several <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> properties recorded for some given data object, use a <a class=\"localLink\" href=\"http://schema.org/PropertyValue\">PropertyValue</a> for each <a class=\"localLink\" href=\"http://schema.org/variableMeasured\">variableMeasured</a> and attach the corresponding <a class=\"localLink\" href=\"http://schema.org/measurementTechnique\">measurementTechnique</a>.",
+            "enum": []
+          },
+          "identifier": {
+            "description": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+            "type": "string"
+          },
+          "creator": {
+            "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+            "type": "object"
+          },
+          "distribution": {
+            "description": "A downloadable form of this dataset, at a specific location, in a specific format.",
+            "type": "string"
+          },
+          "citation": {
+            "description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
+            "type": "object"
+          },
+          "funding": {
+            "description": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
+            "type": "string"
+          },
+          "license": {
+            "description": "A license document that applies to this content, typically indicated by URL.",
+            "type": "object"
+          },
+          "species": {
+            "description": "Species(es) from which dataset has been collected",
+            "type": "string"
+          },
+          "pathogen": {
+            "description": "Pathogen(s) which are the focus of the dataset",
+            "type": "string"
+          },
+          "spatialCoverage": {
+            "description": "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of\n      contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates\n      areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.",
+            "type": "string"
+          },
+          "temporalCoverage": {
+            "description": "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in <a href=\"https://en.wikipedia.org/wiki/ISO_8601#Time_intervals\">ISO 8601 time interval format</a>. In\n      the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written \"2011/2012\"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.\n      Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via \"1939/1945\".<br/><br/>\n\nOpen-ended date ranges can be written with \"..\" in place of the end date. For example, \"2015-11/..\" indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "identifier",
+          "creator",
+          "distribution",
+          "funding",
+          "name",
+          "identifier",
+          "description",
+          "creator",
+          "distribution"
+        ]
+      }
+    },
+    {
+      "@id": "sulab:analysisCode",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "link to any code used in the analysis / creation of this Dataset",
+      "rdfs:label": "analysisCode",
+      "schema:domainIncludes": {
+        "@id": "sulab:SuDataset"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:SoftwareSourceCode"
+        }
+      ]
+    }
+  ]
+}
