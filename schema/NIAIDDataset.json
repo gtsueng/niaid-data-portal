@@ -172,8 +172,8 @@
             "@type": "CreativeWork",
             "type": "string",
             "vocabulary": [{
-              "ontology": "ncbitaxon",
-              "children_of": "http://purl.obolibrary.org/obo/ncbitaxon.owl"
+              "ontology": ["ncbitaxon"],
+              "children_of": ["http://purl.obolibrary.org/obo/ncbitaxon.owl"]
             }],
             "strict": false
           },
