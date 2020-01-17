@@ -171,10 +171,10 @@
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
             "type": "string",
-            "vocabulary": [{
+            "vocabulary": {
               "ontology": "ncbitaxon",
               "children_of": "http://purl.obolibrary.org/obo/ncbitaxon.owl"
-            }],
+            },
             "strict": false
           },
           "funder": {
