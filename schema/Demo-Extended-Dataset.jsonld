@@ -77,12 +77,7 @@
         },
         "required": [
           "name",
-          "description",
-          "identifier",
-          "creator",
-          "distribution",
           "funding",
-          "name",
           "identifier",
           "description",
           "creator",
