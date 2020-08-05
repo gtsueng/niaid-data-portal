@@ -213,14 +213,14 @@
                 "type": "string",
                 "format": "date"
               },
-              "url": {
+              "contentUrl": {
                 "type": "string",
                 "format": "uri"
               }
             },
             "required": [
               "dateModified",
-              "url"
+              "contentUrl"
             ]
           },
           "article": {
