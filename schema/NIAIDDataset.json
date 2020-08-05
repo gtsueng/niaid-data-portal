@@ -117,8 +117,8 @@
               }
             ]
           },
-          "pathogen": {
-            "description": "Pathogen(s) which are the focus of the dataset",
+          "infectiousAgent": {
+            "description": "Infectious agent(s) / pathogen(s) which are the focus of the dataset",
             "oneOf": [{
                 "$ref": "#/definitions/miscControlledVocabulary"
               },
@@ -408,10 +408,10 @@
       "marginality": "recommended"
     },
     {
-      "@id": "niaid:pathogen",
+      "@id": "niaid:infectiousAgent",
       "@type": "rdf:Property",
-      "rdfs:comment": "Pathogen(s) which are the focus of the dataset",
-      "rdfs:label": "pathogen",
+      "rdfs:comment": "Infectious agent(s) / pathogen(s) which are the focus of the dataset",
+      "rdfs:label": "infectiousAgent",
       "schema:domainIncludes": [{
         "@id": "niaid:NiaidDataset"
       }],
