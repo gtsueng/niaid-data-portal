@@ -191,8 +191,8 @@
             "@type": "CreativeWork",
             "type": "string",
             "vocabulary": {
-              "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
+              "ontology": ["mondo"],
+              "children_of": ["http://purl.obolibrary.org/obo/MONDO_0000001"]
             },
             "strict": false
           },
