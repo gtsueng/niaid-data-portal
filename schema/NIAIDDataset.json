@@ -89,12 +89,12 @@
           "funding": {
             "description": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
             "oneOf": [{
-                "$ref": "#/definitions/funder"
+                "$ref": "#/definitions/monetaryGrant"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/funder"
+                  "$ref": "#/definitions/monetaryGrant"
                 }
               }
             ]
@@ -196,6 +196,25 @@
             },
             "strict": false
           },
+          "monetaryGrant": {
+            "type": "object",
+            "@type": "MonetaryGrant",
+            "description": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
+            "properties": {
+              "funder": {
+                "type": "#/definitions/funder",
+                "description": "An organization associated with a creator or funder of a dataset"
+              },
+              "identifier": {
+                "type": "string",
+                "description": "Unique identifier(s) for the grant(s) used to fund the Dataset"
+              }
+            },
+            "required": [
+              "funder",
+              "identifier"
+            ]
+          },
           "funder": {
             "type": "object",
             "@type": "Organization",
@@ -207,7 +226,7 @@
               },
               "identifier": {
                 "type": "string",
-                "description": "Unique identifier(s) for the grant(s) used to fund the Dataset"
+                "description": "Unique identifier for the organization funding the Dataset"
               },
               "description": {
                 "type": "string",
@@ -223,8 +242,7 @@
               }
             },
             "required": [
-              "name",
-              "identifier"
+              "name"
             ]
           },
           "dataDownload": {
