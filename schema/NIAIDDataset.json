@@ -202,8 +202,18 @@
             "description": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
             "properties": {
               "funder": {
-                "type": "#/definitions/funder",
-                "description": "An organization associated with a creator or funder of a dataset"
+                "description": "An organization associated with a creator or funder of a dataset",
+                "oneOf": [
+                 {
+                   "$ref": "#/definitions/funder"
+                 },
+                 {
+                   "type": "array",
+                   "items": {
+                     "$ref": "#/definitions/funder"
+                   }
+                 }
+               ]
               },
               "identifier": {
                 "type": "string",
