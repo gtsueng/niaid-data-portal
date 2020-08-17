@@ -107,12 +107,12 @@
           "species": {
             "description": "Species(es) from which dataset has been collected",
             "oneOf": [{
-                "$ref": "#/definitions/miscControlledVocabulary"
+                "$ref": "#/definitions/speciesControlledVocabulary"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/miscControlledVocabulary"
+                  "$ref": "#/definitions/speciesControlledVocabulary"
                 }
               }
             ]
@@ -183,6 +183,16 @@
             "vocabulary": {
               "ontology": ["ncbitaxon"],
               "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
+            },
+            "strict": false
+          },
+          "speciesControlledVocabulary": {
+            "description": "collection of vocabulary terms defined in ontologies",
+            "@type": "CreativeWork",
+            "type": "string",
+            "vocabulary": {
+              "ontology": ["ncbitaxon"],
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567", "http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
             },
             "strict": false
           },
