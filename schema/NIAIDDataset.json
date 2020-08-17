@@ -120,12 +120,12 @@
           "infectiousAgent": {
             "description": "Infectious agent(s) / pathogen(s) which are the focus of the dataset (e.g. SARS-CoV-2)",
             "oneOf": [{
-                "$ref": "#/definitions/miscControlledVocabulary"
+                "$ref": "#/definitions/pathogenControlledVocabulary"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/miscControlledVocabulary"
+                  "$ref": "#/definitions/pathogenControlledVocabulary"
                 }
               }
             ]
@@ -176,13 +176,13 @@
             },
             "strict": false
           },
-          "miscControlledVocabulary": {
+          "pathogenControlledVocabulary": {
             "description": "collection of vocabulary terms defined in ontologies",
             "@type": "CreativeWork",
             "type": "string",
             "vocabulary": {
               "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_2"]
             },
             "strict": false
           },
