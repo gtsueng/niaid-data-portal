@@ -225,6 +225,14 @@
                  }
                ]
               },
+              "description": {
+                "type": "string",
+                "description": "description about the funding award / grant"
+              },
+              "url": {
+                "type": "string",
+                "description": "award / grant URL"
+              },
               "identifier": {
                 "type": "string",
                 "description": "Unique identifier(s) for the grant(s) used to fund the Dataset"
@@ -243,14 +251,6 @@
               "name": {
                 "type": "string",
                 "description": "An organization associated with a creator or funder of a dataset"
-              },
-              "description": {
-                "type": "string",
-                "description": "description about the funding organization"
-              },
-              "url": {
-                "type": "string",
-                "description": "award URL"
               },
               "parentOrganization": {
                 "type": "string",
@@ -609,6 +609,40 @@
       },
       "schema:sameAs": {
         "@id": "schema:identifier"
+      },
+      "owl:cardinality": "one",
+      "marginality": "required"
+    },
+    {
+      "@id": "niaid:description",
+      "@type": "rdf:Property",
+      "rdfs:comment": "description about the funding award / grant",
+      "rdfs:label": "description",
+      "schema:domainIncludes": [{
+        "@id": "niaid:NiaidMonetaryGrant"
+      }],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      },
+      "schema:sameAs": {
+        "@id": "schema:description"
+      },
+      "owl:cardinality": "one",
+      "marginality": "required"
+    },
+    {
+      "@id": "niaid:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "award / grant URL",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": [{
+        "@id": "niaid:NiaidMonetaryGrant"
+      }],
+      "schema:rangeIncludes": {
+        "@id": "schema:Url"
+      },
+      "schema:sameAs": {
+        "@id": "schema:url"
       },
       "owl:cardinality": "one",
       "marginality": "required"
