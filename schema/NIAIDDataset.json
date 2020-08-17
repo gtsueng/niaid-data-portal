@@ -634,7 +634,7 @@
       "@id": "niaid:url",
       "@type": "rdf:Property",
       "rdfs:comment": "award / grant URL",
-      "rdfs:label": "identifier",
+      "rdfs:label": "url",
       "schema:domainIncludes": [{
         "@id": "niaid:NiaidMonetaryGrant"
       }],
