@@ -44,7 +44,7 @@
             ]
           },
           "identifier": {
-            "description": "Longer description of what is contained in the dataset",
+            "description": "A short unique identifier for the Dataset (ideally less than 15 characters)",
             "type": "string"
           },
           "creator": {
@@ -244,10 +244,6 @@
                 "type": "string",
                 "description": "An organization associated with a creator or funder of a dataset"
               },
-              "identifier": {
-                "type": "string",
-                "description": "Unique identifier for the organization funding the Dataset"
-              },
               "description": {
                 "type": "string",
                 "description": "description about the funding organization"
@@ -358,7 +354,7 @@
     {
       "@id": "niaid:identifier",
       "@type": "rdf:Property",
-      "rdfs:comment": "A unique identifier for the Dataset.",
+      "rdfs:comment": "A short unique identifier for the Dataset (ideally less than 15 characters)",
       "rdfs:label": "identifier",
       "schema:domainIncludes": [{
         "@id": "niaid:NiaidDataset"
