@@ -49,13 +49,22 @@
           },
           "creator": {
             "description": "Name of the author or organization that created the dataset.  Note: schema.org/creator and schema.org/organization have additional fields that can provide more information about the author/organization, if desired.",
-            "oneOf": [{
+            "anyOf": [{
                 "$ref": "#/definitions/person"
               },
               {
                 "type": "array",
                 "items": {
                   "$ref": "#/definitions/person"
+                }
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
                 }
               }
             ]
@@ -150,12 +159,26 @@
           "measurementTechnique",
           "creator",
           "distribution",
-          "funding"
+          "funding",
+          "identifier"
         ],
         "definitions": {
           "person": {
             "description": "Reusable person definition",
             "@type": "Person",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "organization": {
+            "description": "Reusable organization definition",
+            "@type": "Organization",
             "type": "object",
             "properties": {
               "name": {
@@ -213,17 +236,16 @@
             "properties": {
               "funder": {
                 "description": "An organization associated with a creator or funder of a dataset",
-                "oneOf": [
-                 {
-                   "$ref": "#/definitions/funder"
-                 },
-                 {
-                   "type": "array",
-                   "items": {
-                     "$ref": "#/definitions/funder"
-                   }
-                 }
-               ]
+                "oneOf": [{
+                    "$ref": "#/definitions/funder"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/funder"
+                    }
+                  }
+                ]
               },
               "description": {
                 "type": "string",
