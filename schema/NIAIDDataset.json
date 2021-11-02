@@ -215,7 +215,7 @@
             "type": "string",
             "vocabulary": {
               "ontology": ["ncbitaxon"],
-              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567", "http://purl.obolibrary.org/obo/NCBITaxon_10239", "http://purl.obolibrary.org/obo/NCBITaxon_131567l"]
+              "children_of": ["http://purl.obolibrary.org/obo/NCBITaxon_131567", "http://purl.obolibrary.org/obo/NCBITaxon_10239"]
             },
             "strict": false
           },
