@@ -540,6 +540,30 @@
       "schema:isPartOf": {
         "@id": "https://discovery.biothings.io/view/niaid/"
       }
+    },
+    {
+      "@id": "bioschemas:ComputationalTool",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A test parent class with properties to see if this fixes the issue",
+      "rdfs:label": "ComputationalTool",
+      "rdfs:subClassOf": {
+        "@id": "schema:SoftwareApplication"
+      },
+      "schema:isPartOf": {
+        "@id": "https://discovery.biothings.io/view/bioschemas/"
+      }
+    },
+    {
+      "@id": "bioschemas:codeRepository",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A test property to see if this fixes the issue.",
+      "rdfs:label": "codeRepository",
+      "schema:domainIncludes": [{
+        "@id": "bioschemas:ComputationalTool"
+      }],
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
     }
   ]
 }
