@@ -411,7 +411,7 @@
     {
       "@id": "niaid:ScholarlyArticle",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A scholarly article in which the dataset is cited.",
+      "rdfs:comment": "A scholarly article in which the dataset or computational tool is cited.",
       "rdfs:label": "ScholarlyArticle",
       "rdfs:subClassOf": {
         "@id": "schema:ScholarlyArticle"
@@ -442,7 +442,7 @@
     {
       "@id": "niaid:MonetaryGrant",
       "@type": "rdfs:Class",
-      "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
+      "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset or computational tool through some kind of financial contribution",
       "rdfs:label": "MonetaryGrant",
       "rdfs:subClassOf": {
         "@id": "schema:MonetaryGrant"
@@ -511,24 +511,24 @@
       }
     },
     {
-      "@id": "niaid:funder",
+      "@id": "niaid:funding",
       "@type": "rdf:Property",
-      "rdfs:comment": "An organization that supports (sponsors) something this dataset some kind of financial contribution.",
-      "rdfs:label": "funder",
+      "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset or computational tool through some kind of financial contribution",
+      "rdfs:label": "funding",
       "schema:domainIncludes": [{
-        "@id": "niaid:MonetaryGrant"
+        "@id": "niaid:NiaidDataset"
       }],
-      "schema:rangeIncludes": {
-        "@id": "niaid:Organization"
-      },
+      "schema:rangeIncludes": [{
+        "@id": "niaid:NiaidMonetaryGrant"
+      }],
       "schema:sameAs": {
-        "@id": "schema:funder"
+        "@id": "schema:funding"
       }
     },
     {
       "@id": "niaid:Organization",
       "@type": "rdfs:Class",
-      "rdfs:comment": "An organization associated with a creator or funder of a dataset",
+      "rdfs:comment": "An organization associated with a creator or funder of a dataset or computational tool",
       "rdfs:label": "Organization",
       "rdfs:subClassOf": {
         "@id": "schema:Organization"
