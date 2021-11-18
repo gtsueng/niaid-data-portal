@@ -516,10 +516,10 @@
       "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset or computational tool through some kind of financial contribution",
       "rdfs:label": "funding",
       "schema:domainIncludes": [{
-        "@id": "niaid:NiaidDataset"
+        "@id": "niaid:Dataset"
       }],
       "schema:rangeIncludes": [{
-        "@id": "niaid:NiaidMonetaryGrant"
+        "@id": "niaid:MonetaryGrant"
       }],
       "schema:sameAs": {
         "@id": "schema:funding"
