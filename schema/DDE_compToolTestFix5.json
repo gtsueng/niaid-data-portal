@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bioschemas": "http://discovery.biothings.io/view/bioschemas/",
+    "mytest": "http://discovery.biothings.io/view/mytest/"
+  },
+  "@graph": [
+    {
+      "@id": "mytest:ComputationalToolTest",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "test extended class from ComputationalTool",
+      "rdfs:label": "ComputationalToolTest",
+      "rdfs:subClassOf": {
+        "@id": "bioschemas:ComputationalTool"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "$bioschemas": "http://discovery.biothings.io/view/bioschemas/",
+        "type": "object",
+        "properties": {
+          "codeRepository": {
+            "description": "Link to the source code repository of the tool.",
+            "oneOf": [
+              {
+                "format": "uri",
+                "type": "string"
+              },
+              {
+                "items": {
+                  "format": "uri",
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ]
+          },
+          "applicationCategory": {
+            "description": "Type of software application, e.g. 'Game, Multimedia'.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "format": "uri",
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "items": {
+                  "format": "uri",
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ]
+          },
+          "creator": {
+            "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+            "type": "string"
+          },
+          "name": {
+            "description": "The name of the item.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  ]
+}
