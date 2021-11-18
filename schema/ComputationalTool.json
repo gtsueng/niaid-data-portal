@@ -12,7 +12,7 @@
       "rdfs:comment": "A schema describing a minimal ComputationalTool for the National Institute of Allergy and Infectious Disease (NIAID). A ComputationalTool is a software used for the collection, processing, distribution, analysis, visualization, interpretation, etc. of data. Additional schema.org and/or custom properties could be added.",
       "rdfs:label": "ComputationalTool",
       "rdfs:subClassOf": {
-        "@id": "bioschemas:ComputationalTool"
+        "@id": "schema:SoftwareApplication"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -20,18 +20,22 @@
         "properties": {
           "name": {
             "description": "Descriptive name of the computational tool",
+            "owl:cardinality": "one",
             "type": "string"
           },
           "description": {
             "description": "Longer description of what is contained in the computational tool",
+            "owl:cardinality": "one",
             "type": "string"
           },
           "identifier": {
             "description": "A short unique identifier for the computational tool (ideally less than 15 characters)",
+            "owl:cardinality": "one",
             "type": "string"
           },
           "creator": {
             "description": "Name of the author or organization that created the computational tool.  Note: schema.org/creator and schema.org/organization have additional fields that can provide more information about the author/organization, if desired.",
+            "owl:cardinality": "many",
             "anyOf": [{
                 "$ref": "#/definitions/person"
               },
@@ -54,20 +58,24 @@
           },
           "url": {
             "description": "software/code location.",
+            "owl:cardinality": "one",
             "type": "string",
             "format": "uri"
           },
           "dateModified": {
+            "owl:cardinality": "one"
             "type": "string",
             "format": "date"
           },
           "license": {
             "description": "A license document that applies to this content, typically indicated by URL.",
+            "owl:cardinality": "one",
             "type": "string",
             "format": "uri"
           },
           "citation": {
             "description": "Journal article or other publication associated with the computational tool (stored as an object, not a string)",
+            "owl:cardinality": "many",
             "oneOf": [{
                 "$ref": "#/definitions/article"
               },
@@ -81,6 +89,7 @@
           },
           "applicationCategory": {
             "description": "Type of software application, e.g. 'Game, Multimedia'. Please use terms from the 'Tool type' table in the biotools documentation.",
+            "owl:cardinality": "many",
             "anyOf": [
               {
                 "type": "string"
@@ -106,6 +115,7 @@
           },
           "applicationSubCategory": {
             "description": "Subcategory of the application, e.g. 'Arcade Game'. Use an EDAM:Topic to describe the category of application",
+            "owl:cardinality": "many",
             "oneOf": [
               {
                 "$ref": "#/definitions/edamTopic"
@@ -120,6 +130,7 @@
           },
           "codeRepository": {
             "description": "Link to the source code repository of the tool.",
+            "owl:cardinality": "many",
             "oneOf": [
               {
                 "type": "string",
@@ -136,6 +147,7 @@
           },
           "programmingLanguage": {
             "description": "The main programming language(s) used to build or execute the tool. Please use terms from the ‘Programming language’ table in the Bio.Tools documentation",
+            "owl:cardinality": "many",
             "oneOf": [
               {
                 "type": "string"
@@ -150,6 +162,7 @@
           },
           "softwareVersion": {
             "description": "Version(s) of the tool, which this information is valid for. Can also be a comma-delimited list and include hyphen-separated ranges of versions.",
+            "owl:cardinality": "many",
             "oneOf": [
               {
                 "type": "string"
@@ -164,6 +177,7 @@
           },
           "featureList": {
             "description": "Features or modules provided by this application (and possibly required by other applications). Functionality provided by the tool. This is similar to measurementTechnique in Dataset.",
+            "owl:cardinality": "many",
             "anyOf": [
               {
                 "$ref": "#/definitions/edamOperation"
@@ -189,6 +203,7 @@
           },
           "species": {
             "description": "Species(es) from which the computation tool is based",
+            "owl:cardinality": "many",
             "oneOf": [{
                 "$ref": "#/definitions/speciesControlledVocabulary"
               },
@@ -202,6 +217,7 @@
           },
           "infectiousAgent": {
             "description": "Infectious agent(s) / pathogen(s) which are the focus of the computational tool (e.g. SARS-CoV-2)",
+            "owl:cardinality": "many",
             "oneOf": [{
                 "$ref": "#/definitions/pathogenControlledVocabulary"
               },
@@ -215,6 +231,7 @@
           },
           "infectiousDisease": {
             "description": "Infectious disease(s) or condition(s) which are the focus of the computational tool (e.g. COVID-19, pneumonia, etc.)",
+            "owl:cardinality": "many",
             "oneOf": [{
                 "$ref": "#/definitions/diseaseControlledVocabulary"
               },
@@ -228,6 +245,7 @@
           },
           "funding": {
             "description": "Funding that supports (sponsors) the collection of this computational tool through some kind of financial contribution",
+            "owl:cardinality": "many",
             "oneOf": [{
                 "$ref": "#/definitions/monetaryGrant"
               },
@@ -247,6 +265,22 @@
           "creator",
           "url",
           "funding"
+        ],
+        "recommended": [
+          "dateModified",
+          "license",
+          "citation",
+          "applicationCategory",
+          "applicationSubCategory",
+          "codeRepository",
+          "programmingLanguage",
+          "softwareVersion",
+          "featureList"
+        ],
+        "optional": [
+          "species",
+          "infectiousAgent",
+          "infectiousDisease"
         ],
         "definitions": {
           "edamTopic": {
@@ -430,6 +464,37 @@
       }
     },
     {
+      "@id": "niaid:codeRepository",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link to the source code repository of the tool.",
+      "rdfs:label": "codeRepository",
+      "schema:domainIncludes": {
+        "@id": "niaid:ComputationalTool"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "niaid:programmingLanguage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The main programming language(s) used to build or execute the tool. Please use terms from the ‘Programming language’ table in the Bio.Tools documentation",
+      "rdfs:label": "programmingLanguage",
+      "schema:domainIncludes": {
+        "@id": "niaid:ComputationalTool"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:ComputerLanguage"
+        }
+      ]
+    },
+    {
       "@id": "niaid:species",
       "@type": "rdf:Property",
       "rdfs:comment": "Species(es) from which dataset has been collected",
@@ -439,9 +504,7 @@
       }],
       "schema:rangeIncludes": [{
         "@id": "schema:Text"
-      }],
-      "owl:cardinality": "many",
-      "marginality": "recommended"
+      }]
     },
     {
       "@id": "niaid:infectiousAgent",
@@ -453,9 +516,7 @@
       }],
       "schema:rangeIncludes": [{
         "@id": "schema:Text"
-      }],
-      "owl:cardinality": "many",
-      "marginality": "recommended"
+      }]
     },
     {
       "@id": "niaid:infectiousDisease",
@@ -467,9 +528,7 @@
       }],
       "schema:rangeIncludes": [{
         "@id": "schema:Text"
-      }],
-      "owl:cardinality": "many",
-      "marginality": "recommended"
+      }]
     },
     {
       "@id": "niaid:funding",
@@ -484,9 +543,7 @@
       }],
       "schema:sameAs": {
         "@id": "schema:funding"
-      },
-      "owl:cardinality": "many",
-      "marginality": "required"
+      }
     },
     {
       "@id": "niaid:funder",
@@ -501,9 +558,7 @@
       },
       "schema:sameAs": {
         "@id": "schema:funder"
-      },
-      "owl:cardinality": "one",
-      "marginality": "required"
+      }
     },
     {
       "@id": "niaid:MonetaryGrant",
@@ -533,54 +588,13 @@
       "@id": "niaid:ScholarlyArticle",
       "@type": "rdfs:Class",
       "rdfs:comment": "A scholarly article in which the dataset is cited.",
-      "rdfs:label": "ScholarlyArticle",
+      "rdfs:label": "NiaidScholarlyArticle",
       "rdfs:subClassOf": {
         "@id": "schema:ScholarlyArticle"
       },
       "schema:isPartOf": {
         "@id": "https://discovery.biothings.io/view/niaid/"
       }
-    },
-    {
-      "@id": "bioschemas:ComputationalTool",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A test parent class with properties to see if this fixes the issue",
-      "rdfs:label": "ComputationalTool",
-      "rdfs:subClassOf": {
-        "@id": "schema:SoftwareApplication"
-      },
-      "schema:isPartOf": {
-        "@id": "https://discovery.biothings.io/view/bioschemas/"
-      }
-    },
-    {
-      "@id": "bioschemas:codeRepository",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A test property to see if this fixes the issue.",
-      "rdfs:label": "codeRepository",
-      "schema:domainIncludes": [{
-        "@id": "bioschemas:ComputationalTool"
-      }],
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "bioschemas:programmingLanguage",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The main programming language(s) used to build or execute the tool. Please use terms from the ‘Programming language’ table in the Bio.Tools documentation",
-      "rdfs:label": "programmingLanguage",
-      "schema:domainIncludes": {
-        "@id": "bioschemas:ComputationalTool"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:ComputerLanguage"
-        }
-      ]
     }
   ]
 }

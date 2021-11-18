@@ -24,13 +24,13 @@
         "properties": {
           "name": {
             "description": "Descriptive name of the dataset",
-            "type": "string",
-            "owl:cardinality": "one"
+            "owl:cardinality": "one",
+            "type": "string"
           },
           "description": {
             "description": "Longer description of what is contained in the dataset",
-            "type": "string",
-            "owl:cardinality": "one"
+            "owl:cardinality": "one",
+            "type": "string"
           },
           "measurementTechnique": {
             "description": "A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s).",
