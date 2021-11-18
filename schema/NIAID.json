@@ -581,7 +581,7 @@
       "rdfs:comment": "A schema describing a minimal ComputationalTool for the National Institute of Allergy and Infectious Disease (NIAID). A ComputationalTool is a software used for the collection, processing, distribution, analysis, visualization, interpretation, etc. of data. Additional schema.org and/or custom properties could be added.",
       "rdfs:label": "ComputationalTool",
       "rdfs:subClassOf": {
-        "@id": "bioschemas:ComputationalTool"
+        "@id": "schema:SoftwareApplication"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
