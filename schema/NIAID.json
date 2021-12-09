@@ -825,6 +825,21 @@
                 }
               }
             ]
+          },
+          "softwareHelp": {
+            "description": "A documentation of the tool.",
+            "owl:cardinality": "many",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/documentation"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/documentation"
+                }
+              }
+            ]            
           }
         },
         "required": [
@@ -844,7 +859,8 @@
           "codeRepository",
           "programmingLanguage",
           "softwareVersion",
-          "featureList"
+          "featureList",
+          "softwareHelp"
         ],
         "optional": [
           "species",
@@ -1028,6 +1044,16 @@
             "required": [
               "name"
             ]
+          },
+          "documentation": {
+            "@type": "CreativeWork",
+            "type": "object",
+            "properties": {
+              "url": {
+                  "type": "string",
+                  "format": "uri"
+                }       
+            }
           }
         }
       }
