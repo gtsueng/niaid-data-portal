@@ -163,6 +163,36 @@
                 }
               }
             ]
+          },
+          "spatialCoverage": {
+            "description": "spatial information related to the dataset",
+            "owl:cardinality": "many",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/place"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/place"
+                }
+              }
+            ]
+          },
+          "temporalCoverage": {
+            "description": "temporal information related to the dataset. For dates pertaining to the dataset record, use datePublished, dateCreated, dateModified, etc.",
+            "owl:cardinality": "many",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/temporalInterval"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/temporalInterval"
+                }
+              }
+            ]           
           }
         },
         "required": [
@@ -338,6 +368,148 @@
             "required": [
               "url"
             ]
+          },
+          "place": {
+            "description": "Location information",
+            "@type": "AdministrativeArea",
+            "type": "object",
+            "properties": {
+              "locationType": {
+                "description": "Categorization of how the location relates to the dataset or computational tool",
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "residence",
+                      "exposure",
+                      "collection",
+                      "screening",
+                      "treatment",
+                      "study location",
+                      "other",
+                      "unknown"
+                    ]
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "residence",
+                        "exposure",
+                        "collection",
+                        "screening",
+                        "treatment",
+                        "study location",
+                        "other",
+                        "unknown"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "administrativeType": {
+                "description": "the type of administrative area",
+                "type": "string",
+                "enum": [
+                  "province",
+                  "district",
+                  "chiefdom",
+                  "village",
+                  "city",
+                  "country",
+                  "prefecture",
+                  "sub-prefecture",
+                  "clan",
+                  "Federal Capital Territory",
+                  "state",
+                  "Local Government Area",
+                  "ward"
+                ]
+              },
+              "alternateName": {
+                "description": "An alias for the location.",
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "identifier": {
+                "description": "An identifier for the location, preferably a Wikidata ID.",
+                "type": "string"
+              },
+              "name": {
+                "description": "The name of the item.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "locationType",
+              "identifier"
+            ]
+          },
+          "temporalInterval": {
+            "description": "Temporal information",
+            "@type": "TemporalInterval",
+            "type": "object",
+            "properties": {
+              "temporalType": {
+                "description": "Categorization of how the date/temporal interval relates to the dataset or computational tool",
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "exposure",
+                      "collection",
+                      "screening",
+                      "treatment",
+                      "study date",
+                      "other",
+                      "unknown"
+                    ]
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "exposure",
+                        "collection",
+                        "screening",
+                        "treatment",
+                        "study date",
+                        "other",
+                        "unknown"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "startDate": {
+                "description": "A start date. ",
+                "type": "string",
+                "format": "date"
+              },
+              "endDate": {
+                "description": "An end date.",
+                "type": "string",
+                "format": "date"
+              },
+              "duration": {
+                "description": "A time interval in ISO 8601 duration format.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "temporalType"
+            ]              
           }
         }
       }
@@ -475,7 +647,7 @@
               "Federal Capital Territory",
               "state",
               "Local Government Area",
-              "ward",
+              "ward"
             ]
           },
           "alternateName": {
