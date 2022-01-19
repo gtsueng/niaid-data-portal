@@ -209,7 +209,9 @@
           "license",
           "species",
           "infectiousAgent",
-          "infectiousDisease"
+          "infectiousDisease",
+          "spatialCoverage",
+          "temporalCoverage"
             
         ],
         "definitions": {
