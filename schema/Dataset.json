@@ -159,8 +159,8 @@
               }
             ]
           },
-          "infectiousDisease": {
-            "description": "Infectious disease(s) or condition(s) which are the focus of the dataset (e.g. COVID-19, pneumonia, etc.)",
+          "healthCondition": {
+            "description": "The Infectious disease(s) / health condition(s) which are the focus of the dataset (e.g. COVID-19, pneumonia, etc.)",
             "owl:cardinality": "many",
             "oneOf": [{
                 "$ref": "#/definitions/diseaseControlledVocabulary"
@@ -218,7 +218,7 @@
           "license",
           "species",
           "infectiousAgent",
-          "infectiousDisease",
+          "healthCondition",
           "spatialCoverage",
           "temporalCoverage"
             
@@ -550,10 +550,10 @@
       }]
     },
     {
-      "@id": "niaid:infectiousDisease",
+      "@id": "niaid:healthCondition",
       "@type": "rdf:Property",
-      "rdfs:comment": "Infectious disease(s) / condition(s) which are the focus of the dataset (e.g. COVID-19, coronavirus)",
-      "rdfs:label": "infectiousDisease",
+      "rdfs:comment": "The infectious disease(s) / health condition(s) which are the focus of the dataset (e.g. COVID-19, coronavirus)",
+      "rdfs:label": "healthCondition",
       "schema:domainIncludes": [{
         "@id": "niaid:Dataset"
       }],

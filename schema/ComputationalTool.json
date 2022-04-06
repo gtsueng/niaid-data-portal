@@ -238,8 +238,8 @@
               }
             ]
           },
-          "infectiousDisease": {
-            "description": "Infectious disease(s) or condition(s) which are the focus of the computational tool (e.g. COVID-19, pneumonia, etc.)",
+          "healthCondition": {
+            "description": "The infectious disease(s) or health condition(s) which are the focus of the computational tool (e.g. COVID-19, pneumonia, etc.)",
             "owl:cardinality": "many",
             "oneOf": [{
                 "$ref": "#/definitions/diseaseControlledVocabulary"
@@ -305,7 +305,7 @@
         "optional": [
           "species",
           "infectiousAgent",
-          "infectiousDisease"
+          "healthCondition"
         ],
         "definitions": {
           "edamTopic": {
@@ -532,7 +532,7 @@
     {
       "@id": "niaid:species",
       "@type": "rdf:Property",
-      "rdfs:comment": "Species(es) from which dataset has been collected",
+      "rdfs:comment": "Species(es) for which the computational tool was designed",
       "rdfs:label": "species",
       "schema:domainIncludes": [{
         "@id": "niaid:ComputationalTool"
@@ -544,7 +544,7 @@
     {
       "@id": "niaid:infectiousAgent",
       "@type": "rdf:Property",
-      "rdfs:comment": "Infectious agent(s) / pathogen(s) which are the focus of the dataset (e.g. SARS-CoV-2)",
+      "rdfs:comment": "Infectious agent(s) / pathogen(s) which are the focus of the computational tool (e.g. SARS-CoV-2)",
       "rdfs:label": "infectiousAgent",
       "schema:domainIncludes": [{
         "@id": "niaid:ComputationalTool"
@@ -554,10 +554,10 @@
       }]
     },
     {
-      "@id": "niaid:infectiousDisease",
+      "@id": "niaid:healthCondition",
       "@type": "rdf:Property",
-      "rdfs:comment": "Infectious disease(s) / condition(s) which are the focus of the dataset (e.g. COVID-19, coronavirus)",
-      "rdfs:label": "infectiousDisease",
+      "rdfs:comment": "The infectious disease(s) / health condition(s) which are the focus of the computational tool (e.g. COVID-19, coronavirus)",
+      "rdfs:label": "healthCondition",
       "schema:domainIncludes": [{
         "@id": "niaid:ComputationalTool"
       }],
@@ -568,7 +568,7 @@
     {
       "@id": "niaid:funding",
       "@type": "rdf:Property",
-      "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
+      "rdfs:comment": "Funding that supports (sponsors) the development or maintenance of this computational tool through some kind of financial contribution",
       "rdfs:label": "funding",
       "schema:domainIncludes": [{
         "@id": "niaid:ComputationalTool"
@@ -583,7 +583,7 @@
     {
       "@id": "niaid:funder",
       "@type": "rdf:Property",
-      "rdfs:comment": "An organization that supports (sponsors) something this dataset some kind of financial contribution.",
+      "rdfs:comment": "An organization that supports (sponsors) the development or maintenance of this computational tool through some kind of financial contribution.",
       "rdfs:label": "funder",
       "schema:domainIncludes": [{
         "@id": "niaid:MonetaryGrant"
@@ -598,7 +598,7 @@
     {
       "@id": "niaid:MonetaryGrant",
       "@type": "rdfs:Class",
-      "rdfs:comment": "Funding that supports (sponsors) the collection of this dataset through some kind of financial contribution",
+      "rdfs:comment": "Funding that supports (sponsors) the development or maintenance of this computational tool through some kind of financial contribution",
       "rdfs:label": "MonetaryGrant",
       "rdfs:subClassOf": {
         "@id": "schema:MonetaryGrant"
@@ -610,7 +610,7 @@
     {
       "@id": "niaid:Organization",
       "@type": "rdfs:Class",
-      "rdfs:comment": "An organization associated with a creator or funder of a dataset",
+      "rdfs:comment": "An organization associated with a creator or funder of a computational tool",
       "rdfs:label": "Organization",
       "rdfs:subClassOf": {
         "@id": "schema:Organization"
@@ -622,7 +622,7 @@
     {
       "@id": "niaid:ScholarlyArticle",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A scholarly article in which the dataset is cited.",
+      "rdfs:comment": "A scholarly article in which the computational tool is cited.",
       "rdfs:label": "NiaidScholarlyArticle",
       "rdfs:subClassOf": {
         "@id": "schema:ScholarlyArticle"
