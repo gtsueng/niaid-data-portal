@@ -47,9 +47,18 @@
             ]
           },
           "identifier": {
-            "description": "A short unique identifier for the Dataset (ideally less than 15 characters)",
-            "owl:cardinality": "one",
-            "type": "string"
+            "description": "Identifiers for the dataset (ideally less than 15 characters)",
+            "owl:cardinality": "many",
+            "oneOf": [{
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
           },
           "creator": {
             "description": "Name of the author or organization that created the dataset.  Note: schema.org/creator and schema.org/organization have additional fields that can provide more information about the author/organization, if desired.",
