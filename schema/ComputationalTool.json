@@ -3,6 +3,7 @@
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "bioschemas": "https://discovery.biothings.io/view/bioschemas/",
     "niaid": "http://discovery.biothings.io/view/niaid/"
   },
   "@graph": [
@@ -12,7 +13,7 @@
       "rdfs:comment": "A schema describing a minimal ComputationalTool for the National Institute of Allergy and Infectious Disease (NIAID). A ComputationalTool is a software used for the collection, processing, distribution, analysis, visualization, interpretation, etc. of data. Additional schema.org and/or custom properties could be added.",
       "rdfs:label": "ComputationalTool",
       "rdfs:subClassOf": {
-        "@id": "schema:SoftwareApplication"
+        "@id": "bioschemas:ComputationalTool"
       },
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -72,7 +73,8 @@
             "format": "uri"
           },
           "dateModified": {
-            "owl:cardinality": "one"
+            "owl:cardinality": "one",
+            "owl:cardinality": "one",
             "type": "string",
             "format": "date"
           },
@@ -623,7 +625,7 @@
       "@id": "niaid:ScholarlyArticle",
       "@type": "rdfs:Class",
       "rdfs:comment": "A scholarly article in which the computational tool is cited.",
-      "rdfs:label": "NiaidScholarlyArticle",
+      "rdfs:label": "ScholarlyArticle",
       "rdfs:subClassOf": {
         "@id": "schema:ScholarlyArticle"
       },
